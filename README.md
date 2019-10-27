@@ -6,6 +6,7 @@ The intention of this repo is to provide an example of CI/CD (excluding node pro
 * Ansible
 * A CentOS Docker container as Ansible host (even though it's not a good practice for production)
 * Docker-compose to bookstrap the environment, including:
+1. Bitbucket
 1. Jenkins
 1. Nexus
 1. MySQL
