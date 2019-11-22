@@ -1,0 +1,39 @@
+server.port: 9000
+
+application.version: 1.0
+healthCheckInterruptionDurationSeconds: 30
+
+management:
+  metrics:
+    enable.jvm: true
+    export.prometheus.enabled: true
+  endpoints:
+    web.base-path: /
+    enabled-by-default: false
+    web.exposure.include: health,prometheus
+  endpoint:
+    health.enabled: true
+    prometheus.enabled: true
+
+app:
+  config:
+    nodeName: ${nodeName:localhost}
+
+spring:
+  application.name: "demo"
+  cloud:
+    consul:
+      enabled: true
+      host: ${CONSUL_AGENT_HOSTNAME}
+      port: ${CONSUL_AGENT_PORT}
+      discovery:
+        tags: ${SERVICE_DISCOVERY_TAGS}
+        instanceId: ${INSTANCE_ID}
+        register-health-check: true
+        health-check-interval: 10s
+        healthCheckTimeout: 5s
+        health-check-path: /health
+        healthCheckCriticalTimeout: 1m
+        preferIpAddress: true
+
+
