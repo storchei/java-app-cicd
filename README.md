@@ -23,3 +23,19 @@ The example includes Liquibase changesets.
 * Download artifacts from Nexus using maven_artifact module
 * Run Liquibase changesets
 * Run the API as a Linux service
+
+## Bitbucket setup
+
+## Nexus Setup
+
+http://10.5.0.20:8081/
+
+## Docker list volume files
+
+docker run --rm -i -v=java-app-cicd_nexus_data:/tmp/myvolume busybox find /tmp/myvolume | grep -ie "admin\|pass\|login"
+
+
+## Further Info
+
+Bitbucket Docker image: https://hub.docker.com/r/atlassian/bitbucket-server/
+Nexus Docker Image: https://hub.docker.com/r/sonatype/nexus3
